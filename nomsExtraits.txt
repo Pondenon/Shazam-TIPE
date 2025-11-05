@@ -1,0 +1,348 @@
+######## Liens ########
+fichier.txt modifie un peu les flottants pour les enregistrer, explique la mini distance affiché
+
+Either focus video or librosa.load but something is changing the values slightly
+
+https://www.youtube.com/watch?v=9lqH5XLI-V4
+structuring element video explained very good
+
+######## Notes ########
+Notations:
+    • Matrix = méthode 1: comparaison des matrices de valeurs
+    • Fingerprint = méthode 2: comparaison des maximums locaux dans les spectres audio
+    • Signature = méthode 3: comparaison des fréquences maximums à chaque instant 
+Infos:
+    ~ 44 valeurs pour une seconde | 431 / 10s
+    1025 frequences differentes
+Test:
+    test = AudioExtract("get-lucky-([phone] [- 1m] [no sounds] [1s])", "")
+    test.load()
+    print(test.matrix.nb_col)
+    print(test.matrix.nb_lines)
+    test.display()
+
+
+teste: d4, d1, dinf, dtinf, dt1
+
+10s - d1
+20s - d1, dinf, dt1
+30s - d1, dinf, dt1
+
+d1 tres bien
+dinf pas mal
+dtinf tres mauvais, classe 10, 9 et 6
+dt1 tres bon sur les deux derniers, trouve tres bien, sur le 10s classe 3 tres proche
+
+_______________________________MUSIQUES____________________________________
+
+######## Around The world ########
+
+around-the-world-([phone] [- 1m] [no sounds] [small])
+    1 - d1 : 3eme place (168221 vs 104370/137746) [17.10s-25] { 2kHz | 2048} 
+    2 - 1ere place (97 vs 50) [12.39s-25] { 4kHz | 2048}
+    3 - 1ere place (135 vs 130) [4.13s-25] { 2kHz | 2048} 
+around-the-world-([phone] [- 1m] [no sounds] [medium])
+    1 - d1 : 1ere place (699032 vs 948555) [170.71s-25] { 2kHz | 2048}
+    2 - 1ere place (184 vs 78) [21.80s-25] { 2kHz | 2048}
+    3 - 1ere place (227 vs 201) [9.99s-25] { 2kHz | 2048} + 3eme place (227 vs 254/251) [22.32s-25] { 2kHz | 2048} 
+around-the-world-([phone] [- 1m] [no sounds] [large])
+    1 - 
+    2 - 1ere place (256 vs 92) [59.17s-25] { 2kHz | 2048}
+    3 - 1ere place (285 vs 226) [23.81s-25] { 2kHz | 2048} 
+
+around-the-world-([ipad] [- 1m] [no sounds] [small])
+    1 - 
+    2 - 1ere place (111 vs 41) [6.83s-25] { 2kHz | 2048}
+    3 - 8eme place (95 vs 133/125/120/11/108/103/101) [3.87s-25] { 2kHz | 2048} 
+around-the-world-([ipad] [- 1m] [no sounds] [medium])
+    1 - 
+    2 - 
+    3 - 3eme place (163 vs 202/178) [9.46s-25] { 2kHz | 2048} 
+around-the-world-([ipad] [- 1m] [no sounds] [large])
+    1 - 
+    2 - 
+    3 - 4eme place (196 vs 253/206/204) [15.00s-25] { 2kHz | 2048} 
+
+around-the-world-([download] [small])
+    1 - 
+    2 - 
+    3 - 1ere place (431 vs 197) [3.96s-25] { 2kHz | 2048} 
+around-the-world-([download] [medium])
+    1 - 
+    2 - 
+    3 - 1ere place (862 vs 320) [9.44s-25] { 2kHz | 2048} 
+around-the-world-([download] [large])
+    1 - 
+    2 - 
+    3 - 1ere place (1292 vs 446) [17.70s-25] { 2kHz | 2048} 
+around-the-world-([download] [big])
+    1 - 
+    2 - 
+    3 - 1ere place (1722 vs 549) [22.79s-25] { 2kHz | 2048} 
+
+
+######## Get Lucky ########
+
+get-lucky-([ipad] [+ 1m] [no sounds] [small])
+    1 - 
+    2 - 1ere place (72 vs 53) [15.91s-25] { 4kHz | 2048}
+    3 - 3eme place (117 vs 180/142) [4.47s-25] { 2kHz | 2048} 
+get-lucky-([ipad] [+ 1m] [no sounds] [medium])
+    1 - 
+    2 - 
+    3 - 3eme place (179 vs 230/226) [9.76s-25] { 2kHz | 2048}
+get-lucky-([ipad] [+ 1m] [no sounds] [large])
+    1 - d1 : 9eme place (1642577 vs 972257/1057581/1141499/1201687/1512172/1584481) [38.90s-25] { 2kHz | 2048}
+    2 - 
+    3 - 3eme place (224 vs 286/265) [16.79s-25] { 2kHz | 2048}
+get-lucky-([ipad] [+ 1m] [no sounds] [big])
+    1 - 
+    2 - 
+    3 - 3eme place (272 vs 357/284) [20.67s-25] { 2kHz | 2048}
+
+get-lucky-([phone] [+ 1m] [no sounds] [small])
+    1 - 
+    3 - 1ere place (97 vs 64) [14.44s-25] { 2kHz | 2048}
+    3 - 3eme place (121 vs 160/156) [4.82s-25] { 2kHz | 2048}
+get-lucky-([phone] [+ 1m] [no sounds] [medium])
+    1 - 
+    2 - 
+    3 - 3eme place (173 vs 222/203) [10.21s-25] { 2kHz | 2048}
+get-lucky-([phone] [+ 1m] [no sounds] [large])
+    1 - 
+    2 - 
+    3 - 3eme place (217 vs 280/261) [17.81s-25] { 2kHz | 2048}
+get-lucky-([phone] [+ 1m] [no sounds] [big])
+    1 - 
+    2 - 
+    3 - 3eme place (273 vs 319/285) [26.69s-25] { 2kHz | 2048}
+
+get-lucky-([ipad] [- 1m] [no sounds] [small])
+    1 - 
+    2 - 
+    3 - 3eme place (139 vs 168/147) [5.54s-25] { 2kHz | 2048}
+get-lucky-([ipad] [- 1m] [no sounds] [medium])
+    1 - 
+    2 - 
+    3 - 3eme place (204 vs 236/211) [12.24s-25] { 2kHz | 2048}
+get-lucky-([ipad] [- 1m] [no sounds] [large])
+    1 - 
+    2 - 
+    3 - 3eme place (240 vs 282/256) [20.64s-25] { 2kHz | 2048}
+get-lucky-([ipad] [- 1m] [no sounds] [big])
+    1 - 
+    2 - 
+    3 - 1ere place (334 vs 331) [24.09s-25] { 2kHz | 2048}
+
+get-lucky-([phone] [- 1m] [no sounds] [small])
+    1 - 
+    2 - 1ere place (190 vs 83) [10.80s-25] { 2kHz | 2048}
+    3 - 3eme place (133 vs 166/130) [5.33s-25] { 2kHz | 2048}
+get-lucky-([phone] [- 1m] [no sounds] [medium])
+    1 - 
+    2 - 
+    3 - 3eme place (198 vs 215/203) [10.79s-25] { 2kHz | 2048}
+get-lucky-([phone] [- 1m] [no sounds] [large])
+    1 - 
+    2 - 
+    3 - 2eme place (252 vs 252) [17.93s-25] (ordre alphabetique le fait perdre) { 2kHz | 2048}
+get-lucky-([phone] [- 1m] [no sounds] [big])
+    1 - 
+    2 - 
+    3 - 1ere place (353 vs 296) [28.38s-25] { 2kHz | 2048}
+
+get-lucky-([phone] [- 1m] [no sounds] [small] [ua+11])
+    1 - 
+    2 - 1ere place (196 vs 48) [5.33s-25] { 2kHz | 2048}
+    3 - 3eme place (137 vs 162/159) [4.13s-25] { 2kHz | 2048}
+get-lucky-([phone] [- 1m] [no sounds] [medium] [ua+11])
+    1 - 
+    2 - 1ere place (337 \3186.3 vs 73 \32.4) [16.17s] { 2kHz | 2048}
+    3 - 3eme place (190 vs 217/205) [9.82s-25] { 2kHz | 2048}
+
+get-lucky-([phone] [- 1m] [no sounds] [52] [ua+36])
+    1 - 
+    2 - 
+    3 - 1ere place (119 vs 92) [2.44s-25] { 2kHz | 2048}
+
+get-lucky-([phone] [- 1m] [no sounds] [small] [ua+25])
+    1 - 
+    2 - 1ere place (141 vs 46) [6.00s-25] { 2kHz | 2048}
+    3 - 3eme place (137 vs 154/153) [4.33s-25] { 2kHz | 2048}
+get-lucky-([phone] [- 1m] [no sounds] [16s-25] [ua+25])
+    1 - 
+    2 - 1ere place (411 vs 73) [21.13s-25] { 2kHz | 2048}
+    3 - 1ere place (233 vs 226) [8.85s-25] { 2kHz | 2048}
+
+get-lucky-([phone] [- 1m] [no sounds] [small] [ua+3])
+    1 - 
+    2 - 1ere place (192 vs 80) [18.45s-25] { 2kHz | 2048}
+    3 - 3eme place (129 vs 162/157) [5.27s-25] { 2kHz | 2048}
+get-lucky-([phone] [- 1m] [no sounds] [medium] [ua+3])
+    1 - 
+    2 - 
+    3 - 3eme place (180 vs 221/220) [10.02s-25] { 2kHz | 2048}
+get-lucky-([phone] [- 1m] [no sounds] [large] [ua+3])
+    1 - 
+    2 - 
+    3 - 3eme place (238 vs 259/253) [17.10s-25] { 2kHz | 2048}
+
+
+######## Here With Me ########
+
+here-with-me-([phone] [- 1m] [sounds] [small])
+    1 - 
+    2 - 1ere place (71 vs 12) [7.81s-25] { 4kHz | 2048}
+    3 - 1ere place (180 vs 140) [3.60s-25] { 2kHz | 2048}
+here-with-me-([phone] [- 1m] [sounds] [medium])
+    1 - 
+    2 - 
+    3 - 1ere place (391 vs 217) [7.62s-25] { 2kHz | 2048}
+here-with-me-([phone] [- 1m] [sounds] [large])
+    1 - 
+    2 - 
+    3 - 1ere place (450 vs 272) [11.43s-25] { 2kHz | 2048}
+
+here-with-me-([phone] [- 1m] [sounds] [small] [ua+3])
+    1 - 
+    2 - 
+    3 - 1ere place (194 vs 142) [4.09s-25] { 2kHz | 2048}
+here-with-me-([phone] [- 1m] [sounds] [medium] [ua+3])
+    1 - 
+    2 - 
+    3 - 1ere place (341 vs 223) [7.17] { 2kHz | 2048}
+
+here-with-me-([phone] [- 1m] [sounds] [small] [ua+16])
+    1 - 
+    2 - 1ere place (70 vs 16) [6.78s-25] { 4kHz | 2048}
+    3 - 2eme place (137 vs 154) [3.49s-25] { 2kHz | 2048}
+here-with-me-([phone] [- 1m] [sounds] [medium] [ua+16])
+    1 - 
+    2 - 
+    3 - 1ere place (256 vs 220) [7.19s-25] { 2kHz | 2048}
+
+
+######## Titanium ########
+
+titanium-([ipad] [- 1m] [sounds] [large])
+    1 - 
+    2 - 1ere place (290 vs 80) [46.79s-25] { 4kHz | 2048}
+    3 - 1ere place (403 vs 280) [16.03s-25] { 2kHz | 2048}
+
+
+######## Summer ########
+
+summer-([phone] [- 1m] [sounds] [small])
+    1 - 
+    2 - 1ere place (197 vs 26) [6.06s-25] { 2kHz | 2048}
+    3 - 1ere place (173 vs 161) [5.48s-25]  { 2kHz | 2048} (voir + Hz)
+summer-([phone] [- 1m] [sounds] [medium])
+    1 - d1 : 7eme place (595230 vs 440883/48887/533534/549326/563315/589868) [70.28s-25]  { 2kHz | 2048} ; d2 : 2eme place (2337 vs 2241) [69.62s-25] { 2kHz | 2048} ; d3 : 3eme place (528 vs 498/521) [71.34s-25] { 2kHz | 2048}
+    2 - 1ere place (88 vs 16) [4.05s-25] { 2kHz | 2048} !!!!! Maybe error in code supposed to have more (> 197 because of before)
+    3 - 1ere place (334 vs 268) [9.80s-25] { 2kHz | 2048}
+summer-([phone] [- 1m] [sounds] [large])
+    1 - d2 : (3185 vs 2757/2982/3134) [87.50s-25] { 2kHz | 2048}
+    2 - 1ere place (129 vs 19) [6.35s-25] { 2kHz | 2048}
+    3 - 1ere place (470 vs 352) [15.03s-25] { 2kHz | 2048}
+
+summer-([phone] [- 1m] [sounds] [small] [ua+11])
+    1 - d2 : 4eme place (1395 vs 1003/1278/1294) [52.31s-25] { 2kHz | 2048}
+    2 - 1ere place (62 vs 12) [2.26s-25] { 2kHz | 2048}
+    3 - 1ere place (218 vs 194) [4.74s-25] { 2kHz | 2048}
+
+summer-([phone] [- 1m] [sounds] [small] [ua+29])
+    1 - 
+    2 - 1ere place (336 vs 41) [6.72s-25] { 2kHz | 2048}
+    3 - 1ere place (235 vs 208) [5.56s-25] { 2kHz | 2048}
+summer-([phone] [- 1m] [sounds] [medium] [ua+29])
+    1 - 
+    2 - 1ere place (715 vs 72) [17.44s-25] { 2kHz | 2048}
+    3 - 1ere place (394 vs 310) [13.94s-25] { 2kHz | 2048}
+
+
+######## One more time ########
+
+one-more-time-([phone] [- 1m] [sounds] [small])
+    1 - 
+    2 - 6eme place (10 vs 11*4/10) [1.80s-25] { 2kHz | 2048}
+    3 - 17eme place (101 vs 298/218/202/199/176/172/169/146/144/135/134/129/112/111/108) [5.60s-25] { 2kHz | 2048}
+one-more-time-([phone] [- 1m] [sounds] [medium])
+    1 - 
+    2 - 1ere place (59 vs 19) [6.78s-25] { 2kHz | 2048}
+    3 - 10eme place (173 vs 337/245/239/222/217/213/205/200/181) [10.49s-25] { 2kHz | 2048}
+one-more-time-([phone] [- 1m] [sounds] [large])
+    1 - 
+    2 - 1ere place (72 vs 22) [11.27s-25] { 2kHz | 2048}
+    3 - 2eme place (100 vs 98) [16.49s-25] { 2kHz | 2048}
+
+one-more-time-([phone] [- 1m] [sounds] [small] [ua+11])
+    1 - d2 : 10eme place (1707 vs 1025/1301/1341/1424/1454/1512/1546/1625/1658) [54.48s-25] { 2kHz | 2048}
+    2 - 1ere place (94 vs 24) [8.29s-25] { 2kHz | 2048}
+    3 - 1ere place (159 vs 116) [5.83s-25] { 2kHz | 2048}
+
+one-more-time-([phone] [- 1m] [sounds] [small] [ua+29])
+    1 - 
+    2 - 1ere place (140 vs 36) [6.61s-25] { 2kHz | 2048}
+    3 - 1ere place (169 vs 120) [5.54s-25] { 2kHz | 2048}
+one-more-time-([phone] [- 1m] [sounds] [medium] [ua+29])
+    1 - 
+    2 - 1ere place (289 vs 53) [16.37s-25] { 2kHz | 2048}
+    3 - 1ere place (323 vs 197) [13.67s-25] { 2kHz | 2048}
+
+######## Lean On ########
+
+lean-on-([phone] [- 1m] [sounds] [small])
+    1 - d2 : 2eme place (1194 vs 883) [53.02s-25] { 2kHz | 2048}
+    2 - 1ere place (69 vs 32) [4.29s-25] { 2kHz | 2048}
+    3 - 5eme place (147 vs 193/172/159/152) [5.12s-25] { 2kHz | 2048}
+lean-on-([phone] [- 1m] [sounds] [medium])
+    1 - d2 : 2eme place (2324 vs 2202) [72.24s-25] { 2kHz | 2048}
+    2 - 1ere place (339 vs 63) [13.24s-25] { 2kHz | 2048}
+    3 - 1ere place (294 vs 263) [12.75s-25] { 2kHz | 2048}
+lean-on-([phone] [- 1m] [sounds] [large])
+    1 - d2 : { 2kHz | 2048}
+    2 - 1ere place (598 vs 92) [25.42s-25] { 2kHz | 2048}
+    3 - 1ere place (419 vs 290) [22.98s-25] { 2kHz | 2048}
+
+lean-on-([phone] [- 1m] [sounds] [small] [ua+11])
+    1 - d2 : 2eme place (1186 vs 901) [54.65s-25] { 2kHz | 2048}
+    2 - 1ere place (265 vs 51) [8.35s-25] { 2kHz | 2048}
+    3 - 1ere place (173 vs 148) [5.97s-25] { 2kHz | 2048}
+
+lean-on-([phone] [- 1m] [sounds] [small] [ua+29])
+    1 - 
+    2 - 1ere place (189 \407.0 vs 55 \10.0) [11.19s-25] { 2kHz | 2048} ; 1ere place (204 \882.9 vs 36 \4.9) [16.14s-40] { 2kHz | 4096} 
+    3 - 3eme place (30 \25.5 vs 41 \65.1 /34 \37.1) [6.38s-25] { 2kHz | 2048} ; 19eme place (11 \4.9 vs 21 \34.1) [6.28s-40] { 2kHz | 4096} 
+lean-on-([phone] [- 1m] [sounds] [medium] [ua+29])
+    1 - 
+    2 - 1ere place (357 vs 104) [26.44s-25] { 2kHz | 2048} ; 1ere place (366 \3071.2 vs 48 \6.9) [30.57s-40] { 2kHz | 4096} 
+    3 - 3eme place (187 vs 216/203) [17.17s-25] { 2kHz | 2048} ; 1ere place (31 \74.4 vs 23 \30.4) [15.54s-40] { 2kHz | 4096} 
+
+######## Levels ######## Bad levels put 
+
+levels-([phone] [- 1m] [sounds] [small])
+    1 - 
+    2 - 
+    3 - 
+levels-([phone] [- 1m] [sounds] [medium])
+    1 - 
+    2 - 
+    3 - 
+levels-([phone] [- 1m] [sounds] [large])
+    1 - 
+    2 - 
+    3 - 
+
+levels-([phone] [- 1m] [sounds] [small] [ua+11])
+    1 - 
+    2 - { 4kHz | 2048}
+    3 - 
+
+levels-([phone] [- 1m] [sounds] [small] [ua+29])
+    1 - 
+    2 - 
+    3 - 
+levels-([phone] [- 1m] [sounds] [medium] [ua+29])
+    1 - 
+    2 - 
+    3 - 
